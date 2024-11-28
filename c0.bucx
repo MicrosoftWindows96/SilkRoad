@@ -1,0 +1,8 @@
+context c0
+
+sets
+	USER
+	NAME 
+	PASSWORD
+
+end

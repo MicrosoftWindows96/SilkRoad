@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="NAME" org.eventb.core.type="ℙ(NAME)"/>
+        <org.eventb.core.poIdentifier name="USER" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="PASSWORD" org.eventb.core.type="ℙ(PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="FEEDBACK" org.eventb.core.type="ℙ(FEEDBACK)"/>
+        <org.eventb.core.poIdentifier name="BID" org.eventb.core.type="ℙ(BID)"/>
+        <org.eventb.core.poIdentifier name="AUCTION" org.eventb.core.type="ℙ(AUCTION)"/>
+        <org.eventb.core.poIdentifier name="ITEM" org.eventb.core.type="ℙ(ITEM)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="users" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="bidsOfAuction" org.eventb.core.type="ℙ(AUCTION×BID)"/>
+        <org.eventb.core.poIdentifier name="password" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="name" org.eventb.core.type="ℙ(USER×NAME)"/>
+        <org.eventb.core.poIdentifier name="item" org.eventb.core.type="ℙ(AUCTION×ITEM)"/>
+        <org.eventb.core.poIdentifier name="bids" org.eventb.core.type="ℙ(BID)"/>
+        <org.eventb.core.poIdentifier name="auctions" org.eventb.core.type="ℙ(AUCTION)"/>
+        <org.eventb.core.poIdentifier name="bidders" org.eventb.core.type="ℙ(AUCTION×USER)"/>
+        <org.eventb.core.poIdentifier name="bidValue" org.eventb.core.type="ℙ(BID×ℤ)"/>
+        <org.eventb.core.poIdentifier name="bidder" org.eventb.core.type="ℙ(BID×USER)"/>
+        <org.eventb.core.poIdentifier name="reservePrice" org.eventb.core.type="ℙ(AUCTION×ℤ)"/>
+        <org.eventb.core.poIdentifier name="loginID" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.poIdentifier name="loggedIn" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="seller" org.eventb.core.type="ℙ(AUCTION×USER)"/>
+        <org.eventb.core.poIdentifier name="topBidder" org.eventb.core.type="ℙ(AUCTION×USER)"/>
+        <org.eventb.core.poIdentifier name="userPenalty" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.poIdentifier name="currentBid" org.eventb.core.type="ℙ(AUCTION×BID)"/>
+        <org.eventb.core.poPredicate name="bidsOfAuctioo" org.eventb.core.predicate="users⊆USER" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN0vAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="bidsOfAuctiop" org.eventb.core.predicate="name∈users → NAME" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN0_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="bidsOfAuctioq" org.eventb.core.predicate="password∈users → PASSWORD" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN1PAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="bidsOfAuctior" org.eventb.core.predicate="loginID∈users ↣ ℕ" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN1fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="bidsOfAuctios" org.eventb.core.predicate="loggedIn⊆users" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVG04PAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="INITIALISATION/inv-userPenalty/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(USER×ℤ))∈(∅ ⦂ ℙ(USER)) → ℕ" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IGuM_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVG04fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IK_ofAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IGuM_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#INITIALISATION\/inv-userPenalty\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv-auction-item/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(AUCTION×ITEM))∈(∅ ⦂ ℙ(AUCTION)) ↣ ITEM" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IJxgPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVG04fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IK_ofAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IJxgPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#INITIALISATION\/inv-auction-item\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv-seller/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(AUCTION×USER))∈(∅ ⦂ ℙ(AUCTION)) → (∅ ⦂ ℙ(USER))" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IJxgfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVG04fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IK_ofAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IJxgfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#INITIALISATION\/inv-seller\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv-reserve-price/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(AUCTION×ℤ))∈(∅ ⦂ ℙ(AUCTION)) → ℕ1" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVG04fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IK_ofAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#INITIALISATION\/inv-reserve-price\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv-top-bidder/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(AUCTION×USER))∈(∅ ⦂ ℙ(AUCTION)) ⇸ (∅ ⦂ ℙ(USER))" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVG04fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IK_ofAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#INITIALISATION\/inv-top-bidder\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv-bidders/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(AUCTION×USER))∈(∅ ⦂ ℙ(AUCTION)) ↔ (∅ ⦂ ℙ(USER))" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVG04fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IK_ofAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#INITIALISATION\/inv-bidders\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv-current-bid/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(AUCTION×BID))∈(∅ ⦂ ℙ(AUCTION)) ⇸ (∅ ⦂ ℙ(BID))" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVG04fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IK_ofAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#INITIALISATION\/inv-current-bid\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv-bids-auction/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(AUCTION×BID))∈(∅ ⦂ ℙ(AUCTION)) ↔ (∅ ⦂ ℙ(BID))" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVG04fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IK_ofAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#INITIALISATION\/inv-bids-auction\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD9"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv-bid-value/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(BID×ℤ))∈(∅ ⦂ ℙ(BID)) → ℕ" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVG04fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IK_ofAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#INITIALISATION\/inv-bid-value\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD10"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv-bidder/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctioo"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(BID×USER))∈(∅ ⦂ ℙ(BID)) → (∅ ⦂ ℙ(USER))" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IK_oPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVG04fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IK_ofAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IK_oPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#INITIALISATION\/inv-bidder\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD11"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTbidsOfAuctioo" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="name'" org.eventb.core.type="ℙ(USER×NAME)"/>
+        <org.eventb.core.poIdentifier name="loginID'" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.poIdentifier name="users'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="userPenalty'" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.poIdentifier name="bids'" org.eventb.core.type="ℙ(BID)"/>
+        <org.eventb.core.poIdentifier name="topBidder'" org.eventb.core.type="ℙ(AUCTION×USER)"/>
+        <org.eventb.core.poIdentifier name="seller'" org.eventb.core.type="ℙ(AUCTION×USER)"/>
+        <org.eventb.core.poIdentifier name="bidder'" org.eventb.core.type="ℙ(BID×USER)"/>
+        <org.eventb.core.poIdentifier name="reservePrice'" org.eventb.core.type="ℙ(AUCTION×ℤ)"/>
+        <org.eventb.core.poIdentifier name="bidValue'" org.eventb.core.type="ℙ(BID×ℤ)"/>
+        <org.eventb.core.poIdentifier name="loggedIn'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="item'" org.eventb.core.type="ℙ(AUCTION×ITEM)"/>
+        <org.eventb.core.poIdentifier name="password'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="bidders'" org.eventb.core.type="ℙ(AUCTION×USER)"/>
+        <org.eventb.core.poIdentifier name="bidsOfAuction'" org.eventb.core.type="ℙ(AUCTION×BID)"/>
+        <org.eventb.core.poIdentifier name="currentBid'" org.eventb.core.type="ℙ(AUCTION×BID)"/>
+        <org.eventb.core.poIdentifier name="auctions'" org.eventb.core.type="ℙ(AUCTION)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPbidsOfAuctioo" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTbidsOfAuctioo" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poSequent name="CreateAuction/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctiop("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="u∈dom(userPenalty)∧userPenalty∈USER ⇸ ℤ" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IOC8fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IOC8fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctiop("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CreateAuction/inv-auction-item/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctiop"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="item{a ↦ i}∈auctions∪{a} ↣ ITEM" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IJxgPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IJxgPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#CreateAuction\/inv-auction-item\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CreateAuction/inv-seller/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctiop"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="seller{a ↦ u}∈auctions∪{a} → users" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IJxgfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IJxgfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#CreateAuction\/inv-seller\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CreateAuction/inv-reserve-price/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctiop"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="reservePrice{a ↦ r}∈auctions∪{a} → ℕ1" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#CreateAuction\/inv-reserve-price\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CreateAuction/inv-top-bidder/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctiop"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="topBidder∈auctions∪{a} ⇸ users" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#CreateAuction\/inv-top-bidder\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CreateAuction/inv-bidders/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctiop"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="bidders∈auctions∪{a} ↔ users" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#CreateAuction\/inv-bidders\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CreateAuction/inv-current-bid/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctiop"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="currentBid{a ↦ b}∈auctions∪{a} ⇸ bids∪{b}" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#CreateAuction\/inv-current-bid\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CreateAuction/inv-bids-auction/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctiop"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="bidsOfAuction∪{a ↦ b}∈auctions∪{a} ↔ bids∪{b}" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#CreateAuction\/inv-bids-auction\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD9"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CreateAuction/inv-bid-value/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctiop"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="bidValue{b ↦ 0}∈bids∪{b} → ℕ" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#CreateAuction\/inv-bid-value\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD10"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CreateAuction/inv-bidder/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctiop"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="bidder{b ↦ u}∈bids∪{b} → users" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IK_oPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IK_oPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#CreateAuction\/inv-bidder\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD11"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTbidsOfAuctiop" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poIdentifier name="b" org.eventb.core.type="BID"/>
+        <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="r" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="bids'" org.eventb.core.type="ℙ(BID)"/>
+        <org.eventb.core.poIdentifier name="seller'" org.eventb.core.type="ℙ(AUCTION×USER)"/>
+        <org.eventb.core.poIdentifier name="bidder'" org.eventb.core.type="ℙ(BID×USER)"/>
+        <org.eventb.core.poIdentifier name="reservePrice'" org.eventb.core.type="ℙ(AUCTION×ℤ)"/>
+        <org.eventb.core.poIdentifier name="bidValue'" org.eventb.core.type="ℙ(BID×ℤ)"/>
+        <org.eventb.core.poIdentifier name="item'" org.eventb.core.type="ℙ(AUCTION×ITEM)"/>
+        <org.eventb.core.poIdentifier name="a" org.eventb.core.type="AUCTION"/>
+        <org.eventb.core.poIdentifier name="bidsOfAuction'" org.eventb.core.type="ℙ(AUCTION×BID)"/>
+        <org.eventb.core.poIdentifier name="currentBid'" org.eventb.core.type="ℙ(AUCTION×BID)"/>
+        <org.eventb.core.poIdentifier name="i" org.eventb.core.type="ITEM"/>
+        <org.eventb.core.poIdentifier name="auctions'" org.eventb.core.type="ℙ(AUCTION)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPbidsOfAuctiop(" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTbidsOfAuctiop" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="a∉auctions" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w|org.eventb.core.guard#_2INb5_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="u∈loggedIn" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IOC8PAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPbidsOfAuctiop" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctiop(" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="userPenalty(u)≤2" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IOC8fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="r∈ℕ1" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IOqAPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="i∉ran(item)" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IOqAfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="b∉bids" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2INb4fAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IOqAvAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="CancelAuctionWithoutPenalty/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctioq)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a∈dom(seller)∧seller∈AUCTION ⇸ USER" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IPRFPAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IP4IvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IPRFPAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IP4IvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctioq)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CancelAuctionWithoutPenalty/grd6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctioq+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a∈dom(currentBid;bidValue)∧currentBid;bidValue∈AUCTION ⇸ ℤ∧a∈dom(reservePrice)∧reservePrice∈AUCTION ⇸ ℤ" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IPRFPAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IP4JPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IPRFPAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IP4JPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctioq+"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTbidsOfAuctioq" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="a" org.eventb.core.type="AUCTION"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPbidsOfAuctioq)" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTbidsOfAuctioq" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈loggedIn" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IPRFPAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IPRF_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="a∈auctions" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IPRFPAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IP4IPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="a∈dom(seller)" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IPRFPAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IP4IfAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPbidsOfAuctioq+" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctioq)" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="seller(a)=u" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IPRFPAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IP4IvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="a∈dom(currentBid)" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IPRFPAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IP4I_AKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPbidsOfAuctioq" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctioq+" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="(currentBid;bidValue)(a)&lt;reservePrice(a)" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IPRFPAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IP4JPAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="CancelAuctionWithPenalty/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctior)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a∈dom(seller)∧seller∈AUCTION ⇸ USER" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IP4JfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2ISUYfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IP4JfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2ISUYfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctior)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CancelAuctionWithPenalty/grd6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctior+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a∈dom(currentBid;bidValue)∧currentBid;bidValue∈AUCTION ⇸ ℤ∧a∈dom(reservePrice)∧reservePrice∈AUCTION ⇸ ℤ" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IP4JfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2ISUY_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IP4JfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2ISUY_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctior+"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CancelAuctionWithPenalty/inv-userPenalty/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctior"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="userPenalty{u ↦ userPenalty(u)+1}∈users → ℕ" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IGuM_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IP4JfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IGuM_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#CancelAuctionWithPenalty\/inv-userPenalty\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CancelAuctionWithPenalty/act1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctior"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="u∈dom(userPenalty)∧userPenalty∈USER ⇸ ℤ" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IP4JfAKEe2gRLqR9uY32w|org.eventb.core.action#_2ISUZPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IP4JfAKEe2gRLqR9uY32w|org.eventb.core.action#_2ISUZPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctior"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTbidsOfAuctior" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="userPenalty'" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.poIdentifier name="a" org.eventb.core.type="AUCTION"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPbidsOfAuctior)" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTbidsOfAuctior" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈loggedIn" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IP4JfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IRtUPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="a∈auctions" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IP4JfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IRtUfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="a∈dom(seller)" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IP4JfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2ISUYPAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPbidsOfAuctior+" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctior)" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="seller(a)=u" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IP4JfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2ISUYfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="a∈dom(currentBid)" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IP4JfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2ISUYvAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPbidsOfAuctior" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctior+" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="(currentBid;bidValue)(a)≥reservePrice(a)" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IP4JfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2ISUY_AKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="CloseAuctionSuccess/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctios("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a∈dom(currentBid;bidValue)∧currentBid;bidValue∈AUCTION ⇸ ℤ∧a∈dom(reservePrice)∧reservePrice∈AUCTION ⇸ ℤ" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ISUZfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IS7cvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ISUZfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IS7cvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctios("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="CloseAuctionSuccess/grd6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctios+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a∈dom(topBidder)∧topBidder∈AUCTION ⇸ USER" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ISUZfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IS7dfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ISUZfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IS7dfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctios+"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTbidsOfAuctios" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="a" org.eventb.core.type="AUCTION"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPbidsOfAuctios(" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTbidsOfAuctios" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="a∈auctions" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ISUZfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IS7cPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="a∈dom(currentBid)" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ISUZfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IS7cfAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPbidsOfAuctios+" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctios(" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="(currentBid;bidValue)(a)≥reservePrice(a)" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ISUZfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IS7cvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="u∈users" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ISUZfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IS7c_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="a∈dom(topBidder)" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ISUZfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IS7dPAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPbidsOfAuctios" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctios+" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="topBidder(a)=u" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ISUZfAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IS7dfAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="CloseAuctionFail/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctiot("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a∈dom(currentBid;bidValue)∧currentBid;bidValue∈AUCTION ⇸ ℤ∧a∈dom(reservePrice)∧reservePrice∈AUCTION ⇸ ℤ" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IS7dvAKEe2gRLqR9uY32w|org.eventb.core.guard#_2ITigvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IS7dvAKEe2gRLqR9uY32w|org.eventb.core.guard#_2ITigvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctiot("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTbidsOfAuctiot" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poIdentifier name="a" org.eventb.core.type="AUCTION"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPbidsOfAuctiot(" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTbidsOfAuctiot" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="a∈auctions" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IS7dvAKEe2gRLqR9uY32w|org.eventb.core.guard#_2ITigPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="a∈dom(currentBid)" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IS7dvAKEe2gRLqR9uY32w|org.eventb.core.guard#_2ITigfAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPbidsOfAuctiot" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctiot(" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="(currentBid;bidValue)(a)&lt;reservePrice(a)" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IS7dvAKEe2gRLqR9uY32w|org.eventb.core.guard#_2ITigvAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Bid/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctiou)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a∈dom(seller)∧seller∈AUCTION ⇸ USER" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w|org.eventb.core.guard#_2IUJkvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w|org.eventb.core.guard#_2IUJkvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctiou)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Bid/grd8/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctiou-"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a∈dom(currentBid;bidValue)∧currentBid;bidValue∈AUCTION ⇸ ℤ" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w|org.eventb.core.guard#_2IUJlvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w|org.eventb.core.guard#_2IUJlvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctiou-"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Bid/inv-top-bidder/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctiou"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="topBidder{a ↦ u}∈auctions ⇸ users" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#Bid\/inv-top-bidder\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Bid/inv-bidders/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctiou"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="bidders∪{a ↦ u}∈auctions ↔ users" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#Bid\/inv-bidders\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Bid/inv-current-bid/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctiou"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="currentBid{a ↦ b}∈auctions ⇸ bids∪{b}" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#Bid\/inv-current-bid\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Bid/inv-bids-auction/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctiou"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="bidsOfAuction∪{a ↦ b}∈auctions ↔ bids∪{b}" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#Bid\/inv-bids-auction\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD9"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Bid/inv-bid-value/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctiou"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="bidValue{b ↦ v}∈bids∪{b} → ℕ" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#Bid\/inv-bid-value\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD10"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Bid/inv-bidder/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctiou"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="bidder{b ↦ u}∈bids∪{b} → users" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IK_oPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IK_oPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#Bid\/inv-bidder\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD11"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTbidsOfAuctiou" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poIdentifier name="b" org.eventb.core.type="BID"/>
+        <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="v" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="bids'" org.eventb.core.type="ℙ(BID)"/>
+        <org.eventb.core.poIdentifier name="topBidder'" org.eventb.core.type="ℙ(AUCTION×USER)"/>
+        <org.eventb.core.poIdentifier name="bidder'" org.eventb.core.type="ℙ(BID×USER)"/>
+        <org.eventb.core.poIdentifier name="bidValue'" org.eventb.core.type="ℙ(BID×ℤ)"/>
+        <org.eventb.core.poIdentifier name="bidders'" org.eventb.core.type="ℙ(AUCTION×USER)"/>
+        <org.eventb.core.poIdentifier name="a" org.eventb.core.type="AUCTION"/>
+        <org.eventb.core.poIdentifier name="bidsOfAuction'" org.eventb.core.type="ℙ(AUCTION×BID)"/>
+        <org.eventb.core.poIdentifier name="currentBid'" org.eventb.core.type="ℙ(AUCTION×BID)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPbidsOfAuctiou)" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTbidsOfAuctiou" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="a∈auctions" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w|org.eventb.core.guard#_2ITiiPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="u∈loggedIn" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w|org.eventb.core.guard#_2IUJkPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="a∈dom(seller)" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w|org.eventb.core.guard#_2IUJkfAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPbidsOfAuctiou-" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctiou)" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="seller(a)≠u" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w|org.eventb.core.guard#_2IUJkvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="b∈BID" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w|org.eventb.core.guard#_2IUJk_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="v∈ℕ" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w|org.eventb.core.guard#_2IUJlPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="a∈dom(currentBid)" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w|org.eventb.core.guard#_2IUJlfAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPbidsOfAuctiou" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTHYPbidsOfAuctiou-" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="(currentBid;bidValue)(a)&lt;v" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2ITig_AKEe2gRLqR9uY32w|org.eventb.core.guard#_2IUJlvAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTbidsOfAuctiov" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poIdentifier name="result" org.eventb.core.type="ℙ(BID)"/>
+        <org.eventb.core.poIdentifier name="a" org.eventb.core.type="AUCTION"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPbidsOfAuctiov" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTbidsOfAuctiov" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="a∈auctions" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IUwpvAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IVXsfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="result=bidsOfAuction[{a}]" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IUwpvAKEe2gRLqR9uY32w|org.eventb.core.guard#_2IVXsvAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTbidsOfAuctiow" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="ID" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="loggedIn'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="p" org.eventb.core.type="PASSWORD"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPbidsOfAuctiow" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTbidsOfAuctiow" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈users" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVMUdPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVM7gvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="u∉loggedIn" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVMUdPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVM7g_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="password(u)=p" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVMUdPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVM7hPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="loginID(u)=ID" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVMUdPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVM7hfAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTbidsOfAuctiox" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="loggedIn'" org.eventb.core.type="ℙ(USER)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPbidsOfAuctiox" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTbidsOfAuctiox" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈loggedIn" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVNikfAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVNik_AKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="RegisterUser/inv-userPenalty/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctioy"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="userPenalty{u ↦ 0}∈users∪{u} → ℕ" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IGuM_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IV-wPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IGuM_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#RegisterUser\/inv-userPenalty\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="RegisterUser/inv-seller/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctioy"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="seller∈auctions → users∪{u}" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IJxgfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IV-wPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IJxgfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#RegisterUser\/inv-seller\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="RegisterUser/inv-top-bidder/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctioy"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="topBidder∈auctions ⇸ users∪{u}" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IV-wPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#RegisterUser\/inv-top-bidder\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="RegisterUser/inv-bidders/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctioy"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="bidders∈auctions ↔ users∪{u}" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IV-wPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#RegisterUser\/inv-bidders\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="RegisterUser/inv-bidder/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTALLHYPbidsOfAuctioy"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="bidder∈bids → users∪{u}" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IK_oPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.event#_2IV-wPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IK_oPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poSequent#RegisterUser\/inv-bidder\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD11"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTbidsOfAuctioy" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poIdentifier name="name'" org.eventb.core.type="ℙ(USER×NAME)"/>
+        <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="loginID'" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.poIdentifier name="users'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="n" org.eventb.core.type="NAME"/>
+        <org.eventb.core.poIdentifier name="userPenalty'" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.poIdentifier name="password'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="l" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="p" org.eventb.core.type="PASSWORD"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPbidsOfAuctioy" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#EVTIDENTbidsOfAuctioy" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈USER" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVIqFPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="u∉users" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVKfQPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="n∈NAME" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVLtYPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p∈PASSWORD" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVLtYfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="l∈ℕ" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVLtYvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="l∉ran(loginID)" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVLtY_AKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/SilkRoad/m1.bpo|org.eventb.core.poFile#m1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="userPenalty∈users → ℕ" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IGuM_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="auctions⊆AUCTION" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IJKcPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="item∈auctions ↣ ITEM" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IJxgPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="seller∈auctions → users" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IJxgfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="reservePrice∈auctions → ℕ1" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="topBidder∈auctions ⇸ users" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="bidders∈auctions ↔ users" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYkvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="bids⊆BID" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYk_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="currentBid∈auctions ⇸ bids" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="bidsOfAuction∈auctions ↔ bids" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="bidValue∈bids → ℕ" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IKYlvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="bidder∈bids → users" org.eventb.core.source="/SilkRoad/m1.bum|org.eventb.core.machineFile#m1|org.eventb.core.invariant#_2IK_oPAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

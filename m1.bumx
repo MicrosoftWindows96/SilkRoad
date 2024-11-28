@@ -1,0 +1,185 @@
+machine m1
+refines m0
+sees c1
+variables
+	users
+	name
+	password
+	loginID
+	loggedIn
+	userPenalty
+	auctions
+	item
+	seller
+	topBidder
+	bidders
+	reservePrice
+	currentBid
+	bids
+	bidsOfAuction
+	bidValue
+	bidder
+	
+invariants
+	@inv-userPenalty: userPenalty ∈ users → ℕ
+	@inv-auctions: auctions ⊆ AUCTION
+	@inv-auction-item: item ∈ auctions ↣ ITEM
+	@inv-seller: seller ∈ auctions → users
+	@inv-reserve-price: reservePrice ∈ auctions → ℕ1
+	@inv-top-bidder: topBidder ∈ auctions ⇸ users
+	@inv-bidders: bidders ∈ auctions ↔ users
+	@inv-bids: bids ⊆ BID
+	@inv-current-bid: currentBid ∈ auctions ⇸ bids
+	@inv-bids-auction: bidsOfAuction ∈ auctions ↔ bids
+	@inv-bid-value: bidValue ∈ bids → ℕ
+	@inv-bidder: bidder ∈ bids → users
+events
+	// Event to initialize the system
+	event INITIALISATION extends INITIALISATION
+	then
+		@init-userPenalty: userPenalty ≔ ∅
+		@init-auctions: auctions ≔ ∅
+		@init-item: item ≔ ∅
+		@init-seller: seller ≔ ∅
+		@init-currentBids: currentBid ≔ ∅
+		@init-reservePrice: reservePrice ≔ ∅
+		@init-topBidder: topBidder ≔ ∅
+		@init-bidders: bidders ≔ ∅
+		@init-bids: bids ≔ ∅
+		@init-bids-auction: bidsOfAuction ≔ ∅
+		@init-bid-value: bidValue ≔ ∅
+		@init-bidder: bidder ≔ ∅
+	end
+
+	// Event to create an auction
+	event CreateAuction
+	any
+		a
+		u
+		r
+		i
+		b
+	where
+		@grd1: a ∉ auctions
+		@grd2: u ∈ loggedIn
+		@grd3: userPenalty(u) ≤ 2
+		@grd4: r ∈ ℕ1
+		@grd5: i ∉ ran(item)
+		@grd6: b ∉ bids
+	then
+		@act1: auctions ≔ auctions ∪ {a}
+		@act2: seller(a) ≔ u
+		@act3: reservePrice(a) ≔ r
+		@act4: item(a) ≔ i
+		@act5: bids ≔ bids ∪ {b}
+		@act6: bidsOfAuction ≔ bidsOfAuction ∪ {a ↦ b}
+		@act7: bidValue(b) ≔ 0
+		@act8: bidder(b) ≔ u
+		@act9: currentBid(a) ≔ b
+	end
+
+	// Event to cancel an auction without penalty
+	event CancelAuctionWithoutPenalty
+	any
+		a
+		u
+	where
+		@grd1: u ∈ loggedIn
+		@grd2: a ∈ auctions
+		@grd3: a ∈ dom(seller)
+		@grd4: seller(a) = u
+		@grd5: a ∈ dom(currentBid)
+		@grd6: (currentBid; bidValue)(a) < reservePrice(a)
+	end
+
+	// Event to cancel an auction with penalty
+	event CancelAuctionWithPenalty
+	any
+		a
+		u
+	where
+		@grd1: u ∈ loggedIn
+		@grd2: a ∈ auctions
+		@grd3: a ∈ dom(seller)
+		@grd4: seller(a) = u
+		@grd5: a ∈ dom(currentBid)
+		@grd6: (currentBid; bidValue)(a) ≥ reservePrice(a)
+	then
+		@act1: userPenalty(u) ≔ userPenalty(u) + 1
+	end
+
+	// Event to close an auction successfully
+	event CloseAuctionSuccess
+	any
+		a 
+		u
+	where
+		@grd1: a ∈ auctions
+		@grd2: a ∈ dom(currentBid)
+		@grd3: (currentBid; bidValue)(a) ≥ reservePrice(a)
+		@grd4: u ∈ users
+		@grd5: a ∈ dom(topBidder)
+		@grd6: topBidder(a) = u
+	end
+
+	// Event to close an auction unsuccessfully
+	event CloseAuctionFail
+	any
+		a
+	where
+		@grd1: a ∈ auctions
+		@grd2: a ∈ dom(currentBid)
+		@grd3: (currentBid; bidValue)(a) < reservePrice(a)
+	end
+
+	// Event to place a bid
+	event Bid
+	any
+		a
+		u
+		b
+		v
+	where
+		@grd1: a ∈ auctions
+		@grd2: u ∈ loggedIn
+		@grd3: a ∈ dom(seller)
+		@grd4: seller(a) ≠ u
+		@grd5: b ∈ BID
+		@grd6: v ∈ ℕ
+		@grd7: a ∈ dom(currentBid) 
+		@grd8: (currentBid; bidValue)(a) < v
+	then
+		@act1: topBidder(a) ≔ u
+		@act2: bidders ≔ bidders ∪ {a ↦ u}
+		@act3: bids ≔ bids ∪ {b}
+		@act4: currentBid(a) ≔ b
+		@act5: bidsOfAuction ≔ bidsOfAuction ∪ {a ↦ b}
+		@act6: bidValue(b) ≔ v
+		@act7: bidder(b) ≔ u
+	end
+
+	// Event to get the history of an auction
+	event getAuctionHistory
+	any
+		a
+		result
+	where
+		@grd1: a ∈ auctions
+		@grd2: result = bidsOfAuction[{a}]
+	end
+
+	// Event to log in
+	event LogIn extends LogIn
+	end
+	
+	// Event to log out
+	event LogOut extends LogOut
+	end
+
+	// Event to register a new user
+	event RegisterUser extends RegisterUser
+		then
+			@act-set-penalty: userPenalty(u) ≔ 0
+	end
+
+end

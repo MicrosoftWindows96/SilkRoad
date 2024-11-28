@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base">
+    <org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/SilkRoad/c0.bcc|org.eventb.core.scContextFile#c0" org.eventb.core.source="/SilkRoad/c1.buc|org.eventb.core.contextFile#c1|org.eventb.core.extendsContext#_EXCHgPAKEe2gRLqR9uY32w"/>
+    <org.eventb.core.scInternalContext name="c0">
+        <org.eventb.core.scCarrierSet name="NAME" org.eventb.core.source="/SilkRoad/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.carrierSet#_EW8n8PAKEe2gRLqR9uY32w" org.eventb.core.type="ℙ(NAME)"/>
+        <org.eventb.core.scCarrierSet name="USER" org.eventb.core.source="/SilkRoad/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.carrierSet#_EW8A4PAKEe2gRLqR9uY32w" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.scCarrierSet name="PASSWORD" org.eventb.core.source="/SilkRoad/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.carrierSet#_EW9PAPAKEe2gRLqR9uY32w" org.eventb.core.type="ℙ(PASSWORD)"/>
+    </org.eventb.core.scInternalContext>
+    <org.eventb.core.scCarrierSet name="FEEDBACK" org.eventb.core.source="/SilkRoad/c1.buc|org.eventb.core.contextFile#c1|org.eventb.core.carrierSet#_EXCukvAKEe2gRLqR9uY32w" org.eventb.core.type="ℙ(FEEDBACK)"/>
+    <org.eventb.core.scCarrierSet name="BID" org.eventb.core.source="/SilkRoad/c1.buc|org.eventb.core.contextFile#c1|org.eventb.core.carrierSet#_EXCukfAKEe2gRLqR9uY32w" org.eventb.core.type="ℙ(BID)"/>
+    <org.eventb.core.scCarrierSet name="AUCTION" org.eventb.core.source="/SilkRoad/c1.buc|org.eventb.core.contextFile#c1|org.eventb.core.carrierSet#_EXCukPAKEe2gRLqR9uY32w" org.eventb.core.type="ℙ(AUCTION)"/>
+    <org.eventb.core.scCarrierSet name="ITEM" org.eventb.core.source="/SilkRoad/c1.buc|org.eventb.core.contextFile#c1|org.eventb.core.carrierSet#_EXCHgfAKEe2gRLqR9uY32w" org.eventb.core.type="ℙ(ITEM)"/>
+</org.eventb.core.scContextFile>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xmachine.base" org.eventb.core.generated="false" version="5">
+    <org.eventb.core.refinesMachine name="_2H5S0PAKEe2gRLqR9uY32w" org.eventb.core.target="m0"/>
+    <org.eventb.core.seesContext name="_2H-LUPAKEe2gRLqR9uY32w" org.eventb.core.target="c1"/>
+    <org.eventb.core.variable name="_2IDD0PAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="users"/>
+    <org.eventb.core.variable name="_2IE5APAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="name"/>
+    <org.eventb.core.variable name="_2IFgEPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="password"/>
+    <org.eventb.core.variable name="_2IFgEfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="loginID"/>
+    <org.eventb.core.variable name="_2IGHIPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="loggedIn"/>
+    <org.eventb.core.variable name="_2IGHIfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="userPenalty"/>
+    <org.eventb.core.variable name="_2IGHIvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="auctions"/>
+    <org.eventb.core.variable name="_2IGHI_AKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="item"/>
+    <org.eventb.core.variable name="_2IGHJPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="seller"/>
+    <org.eventb.core.variable name="_2IGHJfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="topBidder"/>
+    <org.eventb.core.variable name="_2IGHJvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="bidders"/>
+    <org.eventb.core.variable name="_2IGHJ_AKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="reservePrice"/>
+    <org.eventb.core.variable name="_2IGHKPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="currentBid"/>
+    <org.eventb.core.variable name="_2IGHKfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="bids"/>
+    <org.eventb.core.variable name="_2IGuMPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="bidsOfAuction"/>
+    <org.eventb.core.variable name="_2IGuMfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="bidValue"/>
+    <org.eventb.core.variable name="_2IGuMvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="bidder"/>
+    <org.eventb.core.invariant name="_2IGuM_AKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-userPenalty" org.eventb.core.predicate="userPenalty ∈ users → ℕ"/>
+    <org.eventb.core.invariant name="_2IJKcPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-auctions" org.eventb.core.predicate="auctions ⊆ AUCTION"/>
+    <org.eventb.core.invariant name="_2IJxgPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-auction-item" org.eventb.core.predicate="item ∈ auctions ↣ ITEM"/>
+    <org.eventb.core.invariant name="_2IJxgfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-seller" org.eventb.core.predicate="seller ∈ auctions → users"/>
+    <org.eventb.core.invariant name="_2IKYkPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-reserve-price" org.eventb.core.predicate="reservePrice ∈ auctions → ℕ1"/>
+    <org.eventb.core.invariant name="_2IKYkfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-top-bidder" org.eventb.core.predicate="topBidder ∈ auctions ⇸ users"/>
+    <org.eventb.core.invariant name="_2IKYkvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-bidders" org.eventb.core.predicate="bidders ∈ auctions ↔ users"/>
+    <org.eventb.core.invariant name="_2IKYk_AKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-bids" org.eventb.core.predicate="bids ⊆ BID"/>
+    <org.eventb.core.invariant name="_2IKYlPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-current-bid" org.eventb.core.predicate="currentBid ∈ auctions ⇸ bids"/>
+    <org.eventb.core.invariant name="_2IKYlfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-bids-auction" org.eventb.core.predicate="bidsOfAuction ∈ auctions ↔ bids"/>
+    <org.eventb.core.invariant name="_2IKYlvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-bid-value" org.eventb.core.predicate="bidValue ∈ bids → ℕ"/>
+    <org.eventb.core.invariant name="_2IK_oPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-bidder" org.eventb.core.predicate="bidder ∈ bids → users"/>
+    <org.eventb.core.event name="_2IK_ofAKEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="_2IK_ovAKEe2gRLqR9uY32w" org.eventb.core.assignment="userPenalty ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-userPenalty"/>
+        <org.eventb.core.action name="_2ILmsPAKEe2gRLqR9uY32w" org.eventb.core.assignment="auctions ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-auctions"/>
+        <org.eventb.core.action name="_2IMNwPAKEe2gRLqR9uY32w" org.eventb.core.assignment="item ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-item"/>
+        <org.eventb.core.action name="_2IMNwfAKEe2gRLqR9uY32w" org.eventb.core.assignment="seller ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-seller"/>
+        <org.eventb.core.action name="_2IMNwvAKEe2gRLqR9uY32w" org.eventb.core.assignment="currentBid ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-currentBids"/>
+        <org.eventb.core.action name="_2IM00PAKEe2gRLqR9uY32w" org.eventb.core.assignment="reservePrice ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-reservePrice"/>
+        <org.eventb.core.action name="_2IM00fAKEe2gRLqR9uY32w" org.eventb.core.assignment="topBidder ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-topBidder"/>
+        <org.eventb.core.action name="_2IM00vAKEe2gRLqR9uY32w" org.eventb.core.assignment="bidders ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-bidders"/>
+        <org.eventb.core.action name="_2IM00_AKEe2gRLqR9uY32w" org.eventb.core.assignment="bids ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-bids"/>
+        <org.eventb.core.action name="_2IM01PAKEe2gRLqR9uY32w" org.eventb.core.assignment="bidsOfAuction ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-bids-auction"/>
+        <org.eventb.core.action name="_2IM01fAKEe2gRLqR9uY32w" org.eventb.core.assignment="bidValue ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-bid-value"/>
+        <org.eventb.core.action name="_2INb4PAKEe2gRLqR9uY32w" org.eventb.core.assignment="bidder ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-bidder"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_2INb4fAKEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="CreateAuction">
+        <org.eventb.core.parameter name="_2INb4vAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="a"/>
+        <org.eventb.core.parameter name="_2INb4_AKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="u"/>
+        <org.eventb.core.parameter name="_2INb5PAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="r"/>
+        <org.eventb.core.parameter name="_2INb5fAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="i"/>
+        <org.eventb.core.parameter name="_2INb5vAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="b"/>
+        <org.eventb.core.guard name="_2INb5_AKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="a ∉ auctions"/>
+        <org.eventb.core.guard name="_2IOC8PAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="u ∈ loggedIn"/>
+        <org.eventb.core.guard name="_2IOC8fAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="userPenalty(u) ≤ 2"/>
+        <org.eventb.core.guard name="_2IOqAPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="r ∈ ℕ1"/>
+        <org.eventb.core.guard name="_2IOqAfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="i ∉ ran(item)"/>
+        <org.eventb.core.guard name="_2IOqAvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="b ∉ bids"/>
+        <org.eventb.core.action name="_2IOqA_AKEe2gRLqR9uY32w" org.eventb.core.assignment="auctions ≔ auctions ∪ {a}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_2IOqBPAKEe2gRLqR9uY32w" org.eventb.core.assignment="seller(a) ≔ u" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="_2IOqBfAKEe2gRLqR9uY32w" org.eventb.core.assignment="reservePrice(a) ≔ r" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="_2IOqBvAKEe2gRLqR9uY32w" org.eventb.core.assignment="item(a) ≔ i" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+        <org.eventb.core.action name="_2IOqB_AKEe2gRLqR9uY32w" org.eventb.core.assignment="bids ≔ bids ∪ {b}" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+        <org.eventb.core.action name="_2IPREPAKEe2gRLqR9uY32w" org.eventb.core.assignment="bidsOfAuction ≔ bidsOfAuction ∪ {a ↦ b}" org.eventb.core.generated="false" org.eventb.core.label="act6"/>
+        <org.eventb.core.action name="_2IPREfAKEe2gRLqR9uY32w" org.eventb.core.assignment="bidValue(b) ≔ 0" org.eventb.core.generated="false" org.eventb.core.label="act7"/>
+        <org.eventb.core.action name="_2IPREvAKEe2gRLqR9uY32w" org.eventb.core.assignment="bidder(b) ≔ u" org.eventb.core.generated="false" org.eventb.core.label="act8"/>
+        <org.eventb.core.action name="_2IPRE_AKEe2gRLqR9uY32w" org.eventb.core.assignment="currentBid(a) ≔ b" org.eventb.core.generated="false" org.eventb.core.label="act9"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_2IPRFPAKEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="CancelAuctionWithoutPenalty">
+        <org.eventb.core.parameter name="_2IPRFfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="a"/>
+        <org.eventb.core.parameter name="_2IPRFvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="u"/>
+        <org.eventb.core.guard name="_2IPRF_AKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ loggedIn"/>
+        <org.eventb.core.guard name="_2IP4IPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="a ∈ auctions"/>
+        <org.eventb.core.guard name="_2IP4IfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="a ∈ dom(seller)"/>
+        <org.eventb.core.guard name="_2IP4IvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="seller(a) = u"/>
+        <org.eventb.core.guard name="_2IP4I_AKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="a ∈ dom(currentBid)"/>
+        <org.eventb.core.guard name="_2IP4JPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="(currentBid; bidValue)(a) &lt; reservePrice(a)"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_2IP4JfAKEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="CancelAuctionWithPenalty">
+        <org.eventb.core.parameter name="_2IQfMPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="a"/>
+        <org.eventb.core.parameter name="_2IRGQPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="u"/>
+        <org.eventb.core.guard name="_2IRtUPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ loggedIn"/>
+        <org.eventb.core.guard name="_2IRtUfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="a ∈ auctions"/>
+        <org.eventb.core.guard name="_2ISUYPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="a ∈ dom(seller)"/>
+        <org.eventb.core.guard name="_2ISUYfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="seller(a) = u"/>
+        <org.eventb.core.guard name="_2ISUYvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="a ∈ dom(currentBid)"/>
+        <org.eventb.core.guard name="_2ISUY_AKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="(currentBid; bidValue)(a) ≥ reservePrice(a)"/>
+        <org.eventb.core.action name="_2ISUZPAKEe2gRLqR9uY32w" org.eventb.core.assignment="userPenalty(u) ≔ userPenalty(u) + 1" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_2ISUZfAKEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="CloseAuctionSuccess">
+        <org.eventb.core.parameter name="_2ISUZvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="a"/>
+        <org.eventb.core.parameter name="_2ISUZ_AKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="u"/>
+        <org.eventb.core.guard name="_2IS7cPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="a ∈ auctions"/>
+        <org.eventb.core.guard name="_2IS7cfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="a ∈ dom(currentBid)"/>
+        <org.eventb.core.guard name="_2IS7cvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="(currentBid; bidValue)(a) ≥ reservePrice(a)"/>
+        <org.eventb.core.guard name="_2IS7c_AKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="u ∈ users"/>
+        <org.eventb.core.guard name="_2IS7dPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="a ∈ dom(topBidder)"/>
+        <org.eventb.core.guard name="_2IS7dfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="topBidder(a) = u"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_2IS7dvAKEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="CloseAuctionFail">
+        <org.eventb.core.parameter name="_2IS7d_AKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="a"/>
+        <org.eventb.core.guard name="_2ITigPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="a ∈ auctions"/>
+        <org.eventb.core.guard name="_2ITigfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="a ∈ dom(currentBid)"/>
+        <org.eventb.core.guard name="_2ITigvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="(currentBid; bidValue)(a) &lt; reservePrice(a)"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_2ITig_AKEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Bid">
+        <org.eventb.core.parameter name="_2ITihPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="a"/>
+        <org.eventb.core.parameter name="_2ITihfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="u"/>
+        <org.eventb.core.parameter name="_2ITihvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="b"/>
+        <org.eventb.core.parameter name="_2ITih_AKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="v"/>
+        <org.eventb.core.guard name="_2ITiiPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="a ∈ auctions"/>
+        <org.eventb.core.guard name="_2IUJkPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="u ∈ loggedIn"/>
+        <org.eventb.core.guard name="_2IUJkfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="a ∈ dom(seller)"/>
+        <org.eventb.core.guard name="_2IUJkvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="seller(a) ≠ u"/>
+        <org.eventb.core.guard name="_2IUJk_AKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="b ∈ BID"/>
+        <org.eventb.core.guard name="_2IUJlPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="v ∈ ℕ"/>
+        <org.eventb.core.guard name="_2IUJlfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="a ∈ dom(currentBid)"/>
+        <org.eventb.core.guard name="_2IUJlvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd8" org.eventb.core.predicate="(currentBid; bidValue)(a) &lt; v"/>
+        <org.eventb.core.action name="_2IUJl_AKEe2gRLqR9uY32w" org.eventb.core.assignment="topBidder(a) ≔ u" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_2IUwoPAKEe2gRLqR9uY32w" org.eventb.core.assignment="bidders ≔ bidders ∪ {a ↦ u}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="_2IUwofAKEe2gRLqR9uY32w" org.eventb.core.assignment="bids ≔ bids ∪ {b}" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="_2IUwovAKEe2gRLqR9uY32w" org.eventb.core.assignment="currentBid(a) ≔ b" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+        <org.eventb.core.action name="_2IUwo_AKEe2gRLqR9uY32w" org.eventb.core.assignment="bidsOfAuction ≔ bidsOfAuction ∪ {a ↦ b}" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+        <org.eventb.core.action name="_2IUwpPAKEe2gRLqR9uY32w" org.eventb.core.assignment="bidValue(b) ≔ v" org.eventb.core.generated="false" org.eventb.core.label="act6"/>
+        <org.eventb.core.action name="_2IUwpfAKEe2gRLqR9uY32w" org.eventb.core.assignment="bidder(b) ≔ u" org.eventb.core.generated="false" org.eventb.core.label="act7"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_2IUwpvAKEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="getAuctionHistory">
+        <org.eventb.core.parameter name="_2IUwp_AKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="a"/>
+        <org.eventb.core.parameter name="_2IVXsPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="result"/>
+        <org.eventb.core.guard name="_2IVXsfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="a ∈ auctions"/>
+        <org.eventb.core.guard name="_2IVXsvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="result = bidsOfAuction[{a}]"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_2IVXs_AKEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="LogIn">
+        <org.eventb.core.refinesEvent name="_2IVXtPAKEe2gRLqR9uY32w" org.eventb.core.target="LogIn"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_2IVXtfAKEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="LogOut">
+        <org.eventb.core.refinesEvent name="_2IVXtvAKEe2gRLqR9uY32w" org.eventb.core.target="LogOut"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_2IV-wPAKEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="RegisterUser">
+        <org.eventb.core.refinesEvent name="_2IV-wfAKEe2gRLqR9uY32w" org.eventb.core.target="RegisterUser"/>
+        <org.eventb.core.action name="_2IV-wvAKEe2gRLqR9uY32w" org.eventb.core.assignment="userPenalty(u) ≔ 0" org.eventb.core.generated="false" org.eventb.core.label="act-set-penalty"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>

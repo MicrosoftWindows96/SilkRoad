@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base" org.eventb.core.generated="false" version="3">
+    <org.eventb.core.extendsContext name="_EXCHgPAKEe2gRLqR9uY32w" org.eventb.core.target="c0"/>
+    <org.eventb.core.carrierSet name="_EXCHgfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="ITEM"/>
+    <org.eventb.core.carrierSet name="_EXCukPAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="AUCTION"/>
+    <org.eventb.core.carrierSet name="_EXCukfAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="BID"/>
+    <org.eventb.core.carrierSet name="_EXCukvAKEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="FEEDBACK"/>
+</org.eventb.core.contextFile>

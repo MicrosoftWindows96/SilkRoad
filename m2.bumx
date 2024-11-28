@@ -1,0 +1,255 @@
+machine m2
+refines m1
+sees c1
+
+variables
+	users
+	name
+	password
+	loginID
+	loggedIn
+	userPenalty
+	auctions
+	createdAuctions
+	liveAuctions
+	closedFailed
+	closedSuccess
+	cancelled
+	item
+	seller
+	topBidder
+	bidders
+	reservePrice
+	currentBid
+	bids
+	bidsOfAuction
+	bidValue
+	bidder
+	
+	time
+	startTime
+	endTime
+	feedbackDuration
+	winnerNotif
+	cancelledNotif
+	status
+	
+invariants
+	@inv-time: time ∈ ℕ
+	@inv-feedback-duration: feedbackDuration ∈ ℕ1
+	@inv-start-time: startTime ∈ auctions → ℕ
+	@inv-end-time: endTime ∈ auctions → ℕ
+	@inv-live-auction-duration: ∀a · a ∈ auctions ⇒ startTime(a) < endTime(a)
+	@inv-partition-auctions: partition(auctions, createdAuctions, liveAuctions, closedFailed, closedSuccess, cancelled)
+	@inv-winner-notif: winnerNotif ∈ closedSuccess ↔ users
+	@inv-cancelled-notif: cancelledNotif ∈ cancelled ↔ users
+	@inv-status: status ∈ users ↔ FEEDBACK
+
+events
+	// Initialisation event to set starting state of variables
+	event INITIALISATION extends INITIALISATION
+	then
+		@begin-time: time ≔ 0
+		@init-feedback-duration: feedbackDuration ≔ 5
+		@init-startTime: startTime ≔ ∅
+		@init-endTime: endTime ≔ ∅
+		@init-winner-notif: winnerNotif ≔ ∅
+		@init-cancelled-notif: cancelledNotif ≔ ∅
+		@init-status: status ≔ ∅
+		@init-: createdAuctions ≔ ∅
+		@init-liveAuctions: liveAuctions ≔ ∅
+		@init-closedFailed: closedFailed ≔ ∅
+		@init-closedSuccess: closedSuccess ≔ ∅
+		@init-cancelled: cancelled ≔ ∅
+	end
+
+	// Event for increasing the system time
+	event Clock
+	then
+		@act1: time ≔ time + 1
+	end
+
+	// Event to create an auction - adding time functionality
+	event CreateAuction extends CreateAuction
+	any
+		startT
+		endT
+	where
+		@grd7: startT ∈ ℕ
+		@grd8: endT ∈ ℕ
+		@grd9: startT < endT
+		@grd10: startT ≥ time
+	then
+		@act10: createdAuctions ≔ createdAuctions ∪ {a}
+		@act11: startTime(a) ≔ startT
+		@act12: endTime(a) ≔ endT
+	end
+
+	// Event to create an auction
+	event StartAuction
+	any
+		a
+	where
+		@grd1: a ∈ createdAuctions
+		@grd2: startTime(a) = time
+	then
+		@act1: createdAuctions ≔ createdAuctions ∖ {a}
+		@act2: liveAuctions ≔ liveAuctions ∪ {a}
+	end
+
+	// Event for cancelling an auction without a penalty
+	event CancelAuctionWithoutPenalty extends CancelAuctionWithoutPenalty
+	where
+		@grd7: a ∈ liveAuctions
+		@grd8: endTime(a) > time
+		@grd9: startTime(a) < time
+	then
+		@act1: liveAuctions ≔ liveAuctions ∖ {a}
+		@act2: cancelled ≔ cancelled ∪ {a}
+		@act3: endTime(a) ≔ time
+		@act4: cancelledNotif ≔ cancelledNotif ∪ ({a} × bidders[{a}])
+	end
+
+	// Event for cancelling an auction with a penalty
+	event CancelAuctionWithPenalty extends CancelAuctionWithPenalty
+	where
+		@grd7: a ∈ liveAuctions
+		@grd8: endTime(a) > time
+		@grd9: startTime(a) < time
+	then
+		@act2: liveAuctions ≔ liveAuctions ∖ {a}
+		@act3: cancelled ≔ cancelled ∪ {a}
+		@act4: endTime(a) ≔ time
+		@act5: cancelledNotif ≔ cancelledNotif ∪ ({a} × bidders[{a}])
+	end
+
+	// Event for closing an auction successfully
+	event CloseAuctionSuccess extends CloseAuctionSuccess
+	where
+		@grd7: a ∈ liveAuctions
+		@grd8: a ∈ dom(endTime)
+		@grd9: endTime(a) ≤ time
+	then
+		@act1: liveAuctions ≔ liveAuctions ∖ {a}
+		@act2: closedSuccess ≔ closedSuccess ∪ {a}
+		@act3: winnerNotif ≔ winnerNotif ∪ {a ↦ u}
+	end
+
+	// Event for closing an auction without a bid over the reserve price
+	event CloseAuctionFail extends CloseAuctionFail
+	where
+		@grd4: a ∈ liveAuctions
+		@grd5: a ∈ dom(endTime)
+		@grd6: endTime(a) ≤ time
+	then
+		@act1: liveAuctions ≔ liveAuctions ∖ {a}
+		@act2: closedFailed ≔ closedFailed ∪ {a}
+	end
+
+	// Event for placing a bid on an auction
+	event Bid extends Bid
+	where
+		@grd9: a ∈ liveAuctions
+	end
+
+	// Event for getting auction history
+	event getAuctionHistory extends getAuctionHistory
+	end
+
+	// Event for viewing status of a created auction
+	event ViewStatusCreatedAuction
+	any
+		a
+		u
+		result
+	where
+		@grd1: u ∈ loggedIn
+		@grd2: a ∈ createdAuctions
+		@grd3: seller(a) = u
+		@grd4: result = a
+	end
+	
+	// Event for viewing status of a live auction
+	event ViewStatusLiveAuction
+	any
+		a
+		u
+		result
+	where
+		@grd1: u ∈ loggedIn
+		@grd2: a ∈ liveAuctions
+		@grd3: seller(a) = u
+		@grd4: result = a
+	end
+	
+	
+	// Event for viewing status of a cancelled auction
+	event ViewStatusCancelledAuction
+	any
+		a
+		u
+		result
+	where
+		@grd1: u ∈ loggedIn
+		@grd2: a ∈ cancelled
+		@grd3: seller(a) = u
+		@grd4: result = a
+	end
+	
+	// Event for viewing status of a failed auction
+	event ViewStatusClosedFailedAuction
+	any
+		a
+		u
+		result
+	where
+		@grd1: u ∈ loggedIn
+		@grd2: a ∈ closedFailed
+		@grd3: seller(a) = u
+		@grd4: result = a
+	end
+	
+	// Event for viewing status of a successfully closed auction
+	event ViewStatusClosedSuccessAuction
+	any
+		a
+		u
+		result
+	where
+		@grd1: u ∈ loggedIn
+		@grd2: a ∈ closedSuccess
+		@grd3: seller(a) = u
+		@grd4: result = a
+	end
+
+	// Event for giving feedback on an auction
+	event GiveFeedback
+	any
+		u
+		a
+		f
+	where
+		@grd1: u ∈ loggedIn
+		@grd2: a ∈ closedSuccess ∪ closedFailed ∪ cancelled
+		@grd3: seller(a) ≠ u
+		@grd4: u ∈ bidders[{a}]  // checks if the user is a bidder of the closed auction
+		@grd5: (endTime(a) + feedbackDuration) ≥ time
+		@grd6: endTime(a) < time
+		@grd7: f ∉ ran(status)
+	then
+		@act2: status ≔ status ∪ {seller(a) ↦ f}
+	end
+
+	// Event for logging in a user
+	event LogIn extends LogIn
+	end
+
+	// Event for logging out a user
+	event LogOut extends LogOut
+	end
+
+	// Event for registering a new user
+	event RegisterUser extends RegisterUser
+	end
+
+end

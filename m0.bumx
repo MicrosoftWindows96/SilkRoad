@@ -1,0 +1,70 @@
+machine m0
+sees c0
+
+variables
+	users
+	name
+	password
+	loginID
+	loggedIn
+
+invariants
+	@inv-users: users ⊆ USER
+	@inv-name: name ∈ users → NAME
+	@inv-password: password ∈ users → PASSWORD
+	@inv-loginID: loginID ∈ users ↣ ℕ
+	@inv-logged-in: loggedIn ⊆ users
+
+events
+
+	event INITIALISATION
+	begin
+		@init-users: users ≔ ∅
+		@init-name: name ≔ ∅
+		@init-password: password ≔ ∅
+		@init-loginID: loginID ≔ ∅
+		@init-logged-in: loggedIn ≔ ∅
+	end
+
+	// Event to register a user
+	event RegisterUser
+		any
+			u n p l 
+		where
+			@grd1: u ∈ USER
+			@grd2: u ∉ users
+			@grd3: n ∈ NAME
+			@grd4: p ∈ PASSWORD
+			@grd5: l ∈ ℕ
+			@grd6: l ∉ ran(loginID)
+		then
+			@act-add-user: users ≔ users ∪ {u}
+			@act-set-name: name(u) ≔ n
+			@act-set-password: password(u) ≔ p
+			@act-set-loginID: loginID(u) ≔ l
+	end
+	
+	// Event to log in a user
+	event LogIn
+		any 
+			u p ID
+		where
+			@grd1: u ∈ users
+			@grd2: u ∉ loggedIn
+			@grd3: password(u) = p
+			@grd4: loginID(u) = ID
+		then 
+			@act-add-user: loggedIn ≔ loggedIn ∪ {u}
+	end
+	
+	// Event to log out a user
+	event LogOut
+		any
+			u
+		where 
+			@grd1: u ∈ loggedIn
+		then
+			@act-log-out: loggedIn ≔ loggedIn ∖ {u}
+	end
+
+end

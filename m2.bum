@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xmachine.base" org.eventb.core.generated="false" version="5">
+    <org.eventb.core.refinesMachine name="_Y-UfIPALEe2gRLqR9uY32w" org.eventb.core.target="m1"/>
+    <org.eventb.core.seesContext name="_Y-XicPALEe2gRLqR9uY32w" org.eventb.core.target="c1"/>
+    <org.eventb.core.variable name="_Y-alwPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="users"/>
+    <org.eventb.core.variable name="_Y-bz4PALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="name"/>
+    <org.eventb.core.variable name="_Y-ca8PALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="password"/>
+    <org.eventb.core.variable name="_Y-ca8fALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="loginID"/>
+    <org.eventb.core.variable name="_Y-ca8vALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="loggedIn"/>
+    <org.eventb.core.variable name="_Y-ca8_ALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="userPenalty"/>
+    <org.eventb.core.variable name="_Y-ca9PALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="auctions"/>
+    <org.eventb.core.variable name="_Y-ca9fALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="createdAuctions"/>
+    <org.eventb.core.variable name="_Y-ca9vALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="liveAuctions"/>
+    <org.eventb.core.variable name="_Y-ca9_ALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="closedFailed"/>
+    <org.eventb.core.variable name="_Y-ca-PALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="closedSuccess"/>
+    <org.eventb.core.variable name="_Y-ca-fALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="cancelled"/>
+    <org.eventb.core.variable name="_Y-ca-vALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="item"/>
+    <org.eventb.core.variable name="_Y-dCAPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="seller"/>
+    <org.eventb.core.variable name="_Y-dCAfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="topBidder"/>
+    <org.eventb.core.variable name="_Y-dCAvALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="bidders"/>
+    <org.eventb.core.variable name="_Y-eQIPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="reservePrice"/>
+    <org.eventb.core.variable name="_Y-eQIfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="currentBid"/>
+    <org.eventb.core.variable name="_Y-eQIvALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="bids"/>
+    <org.eventb.core.variable name="_Y-eQI_ALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="bidsOfAuction"/>
+    <org.eventb.core.variable name="_Y-eQJPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="bidValue"/>
+    <org.eventb.core.variable name="_Y-eQJfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="bidder"/>
+    <org.eventb.core.variable name="_Y-eQJvALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="time"/>
+    <org.eventb.core.variable name="_Y-e3MPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="startTime"/>
+    <org.eventb.core.variable name="_Y-e3MfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="endTime"/>
+    <org.eventb.core.variable name="_Y-e3MvALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="feedbackDuration"/>
+    <org.eventb.core.variable name="_Y-e3M_ALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="winnerNotif"/>
+    <org.eventb.core.variable name="_Y-e3NPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="cancelledNotif"/>
+    <org.eventb.core.variable name="_Y-e3NfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="status"/>
+    <org.eventb.core.invariant name="_Y-feQPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-time" org.eventb.core.predicate="time ∈ ℕ"/>
+    <org.eventb.core.invariant name="_Y-gsYPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-feedback-duration" org.eventb.core.predicate="feedbackDuration ∈ ℕ1"/>
+    <org.eventb.core.invariant name="_Y-gsYfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-start-time" org.eventb.core.predicate="startTime ∈ auctions → ℕ"/>
+    <org.eventb.core.invariant name="_Y-oBIPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-end-time" org.eventb.core.predicate="endTime ∈ auctions → ℕ"/>
+    <org.eventb.core.invariant name="_Y-pPQPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-live-auction-duration" org.eventb.core.predicate="∀a · a ∈ auctions ⇒ startTime(a) &lt; endTime(a)"/>
+    <org.eventb.core.invariant name="_Y-pPQfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-partition-auctions" org.eventb.core.predicate="partition(auctions, createdAuctions, liveAuctions, closedFailed, closedSuccess, cancelled)"/>
+    <org.eventb.core.invariant name="_Y-pPQvALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-winner-notif" org.eventb.core.predicate="winnerNotif ∈ closedSuccess ↔ users"/>
+    <org.eventb.core.invariant name="_Y-pPQ_ALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-cancelled-notif" org.eventb.core.predicate="cancelledNotif ∈ cancelled ↔ users"/>
+    <org.eventb.core.invariant name="_Y-pPRPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="inv-status" org.eventb.core.predicate="status ∈ users ↔ FEEDBACK"/>
+    <org.eventb.core.event name="_Y-pPRfALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="_Y-p2UPALEe2gRLqR9uY32w" org.eventb.core.assignment="time ≔ 0" org.eventb.core.generated="false" org.eventb.core.label="begin-time"/>
+        <org.eventb.core.action name="_Y-qdYPALEe2gRLqR9uY32w" org.eventb.core.assignment="feedbackDuration ≔ 5" org.eventb.core.generated="false" org.eventb.core.label="init-feedback-duration"/>
+        <org.eventb.core.action name="_Y-qdYfALEe2gRLqR9uY32w" org.eventb.core.assignment="startTime ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-startTime"/>
+        <org.eventb.core.action name="_Y-qdYvALEe2gRLqR9uY32w" org.eventb.core.assignment="endTime ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-endTime"/>
+        <org.eventb.core.action name="_Y-qdY_ALEe2gRLqR9uY32w" org.eventb.core.assignment="winnerNotif ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-winner-notif"/>
+        <org.eventb.core.action name="_Y-qdZPALEe2gRLqR9uY32w" org.eventb.core.assignment="cancelledNotif ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-cancelled-notif"/>
+        <org.eventb.core.action name="_Y-qdZfALEe2gRLqR9uY32w" org.eventb.core.assignment="status ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-status"/>
+        <org.eventb.core.action name="_Y-qdZvALEe2gRLqR9uY32w" org.eventb.core.assignment="createdAuctions ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-"/>
+        <org.eventb.core.action name="_Y-qdZ_ALEe2gRLqR9uY32w" org.eventb.core.assignment="liveAuctions ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-liveAuctions"/>
+        <org.eventb.core.action name="_Y-rEcPALEe2gRLqR9uY32w" org.eventb.core.assignment="closedFailed ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-closedFailed"/>
+        <org.eventb.core.action name="_Y-rEcfALEe2gRLqR9uY32w" org.eventb.core.assignment="closedSuccess ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-closedSuccess"/>
+        <org.eventb.core.action name="_Y-rEcvALEe2gRLqR9uY32w" org.eventb.core.assignment="cancelled ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="init-cancelled"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-rEc_ALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Clock">
+        <org.eventb.core.action name="_Y-rEdPALEe2gRLqR9uY32w" org.eventb.core.assignment="time ≔ time + 1" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-rEdfALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CreateAuction">
+        <org.eventb.core.refinesEvent name="_Y-rEdvALEe2gRLqR9uY32w" org.eventb.core.target="CreateAuction"/>
+        <org.eventb.core.parameter name="_Y-rEd_ALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="startT"/>
+        <org.eventb.core.parameter name="_Y-rEePALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="endT"/>
+        <org.eventb.core.guard name="_Y-rrgPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="startT ∈ ℕ"/>
+        <org.eventb.core.guard name="_Y-rrgfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd8" org.eventb.core.predicate="endT ∈ ℕ"/>
+        <org.eventb.core.guard name="_Y-rrgvALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd9" org.eventb.core.predicate="startT &lt; endT"/>
+        <org.eventb.core.guard name="_Y-rrg_ALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd10" org.eventb.core.predicate="startT ≥ time"/>
+        <org.eventb.core.action name="_Y-rrhPALEe2gRLqR9uY32w" org.eventb.core.assignment="createdAuctions ≔ createdAuctions ∪ {a}" org.eventb.core.generated="false" org.eventb.core.label="act10"/>
+        <org.eventb.core.action name="_Y-rrhfALEe2gRLqR9uY32w" org.eventb.core.assignment="startTime(a) ≔ startT" org.eventb.core.generated="false" org.eventb.core.label="act11"/>
+        <org.eventb.core.action name="_Y-rrhvALEe2gRLqR9uY32w" org.eventb.core.assignment="endTime(a) ≔ endT" org.eventb.core.generated="false" org.eventb.core.label="act12"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-sSkPALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="StartAuction">
+        <org.eventb.core.parameter name="_Y-sSkfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="a"/>
+        <org.eventb.core.guard name="_Y-sSkvALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="a ∈ createdAuctions"/>
+        <org.eventb.core.guard name="_Y-sSk_ALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="startTime(a) = time"/>
+        <org.eventb.core.action name="_Y-sSlPALEe2gRLqR9uY32w" org.eventb.core.assignment="createdAuctions ≔ createdAuctions ∖ {a}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_Y-sSlfALEe2gRLqR9uY32w" org.eventb.core.assignment="liveAuctions ≔ liveAuctions ∪ {a}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-sSlvALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CancelAuctionWithoutPenalty">
+        <org.eventb.core.refinesEvent name="_Y-sSl_ALEe2gRLqR9uY32w" org.eventb.core.target="CancelAuctionWithoutPenalty"/>
+        <org.eventb.core.guard name="_Y-sSmPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="a ∈ liveAuctions"/>
+        <org.eventb.core.guard name="_Y-sSmfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd8" org.eventb.core.predicate="endTime(a) &gt; time"/>
+        <org.eventb.core.guard name="_Y-s5oPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd9" org.eventb.core.predicate="startTime(a) &lt; time"/>
+        <org.eventb.core.action name="_Y-s5ofALEe2gRLqR9uY32w" org.eventb.core.assignment="liveAuctions ≔ liveAuctions ∖ {a}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_Y-s5ovALEe2gRLqR9uY32w" org.eventb.core.assignment="cancelled ≔ cancelled ∪ {a}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="_Y-tgsPALEe2gRLqR9uY32w" org.eventb.core.assignment="endTime(a) ≔ time" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="_Y-uHwPALEe2gRLqR9uY32w" org.eventb.core.assignment="cancelledNotif ≔ cancelledNotif ∪ ({a} × bidders[{a}])" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-uu0PALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CancelAuctionWithPenalty">
+        <org.eventb.core.refinesEvent name="_Y-uu0fALEe2gRLqR9uY32w" org.eventb.core.target="CancelAuctionWithPenalty"/>
+        <org.eventb.core.guard name="_Y-uu0vALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="a ∈ liveAuctions"/>
+        <org.eventb.core.guard name="_Y-uu0_ALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd8" org.eventb.core.predicate="endTime(a) &gt; time"/>
+        <org.eventb.core.guard name="_Y-vV4PALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd9" org.eventb.core.predicate="startTime(a) &lt; time"/>
+        <org.eventb.core.action name="_Y-vV4fALEe2gRLqR9uY32w" org.eventb.core.assignment="liveAuctions ≔ liveAuctions ∖ {a}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="_Y-vV4vALEe2gRLqR9uY32w" org.eventb.core.assignment="cancelled ≔ cancelled ∪ {a}" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="_Y-vV4_ALEe2gRLqR9uY32w" org.eventb.core.assignment="endTime(a) ≔ time" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+        <org.eventb.core.action name="_Y-wkAPALEe2gRLqR9uY32w" org.eventb.core.assignment="cancelledNotif ≔ cancelledNotif ∪ ({a} × bidders[{a}])" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-wkAfALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CloseAuctionSuccess">
+        <org.eventb.core.refinesEvent name="_Y-xLEPALEe2gRLqR9uY32w" org.eventb.core.target="CloseAuctionSuccess"/>
+        <org.eventb.core.guard name="_Y-xLEfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="a ∈ liveAuctions"/>
+        <org.eventb.core.guard name="_Y-xLEvALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd8" org.eventb.core.predicate="a ∈ dom(endTime)"/>
+        <org.eventb.core.guard name="_Y-xLE_ALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd9" org.eventb.core.predicate="endTime(a) ≤ time"/>
+        <org.eventb.core.action name="_Y-xLFPALEe2gRLqR9uY32w" org.eventb.core.assignment="liveAuctions ≔ liveAuctions ∖ {a}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_Y-xyIPALEe2gRLqR9uY32w" org.eventb.core.assignment="closedSuccess ≔ closedSuccess ∪ {a}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="_Y-xyIfALEe2gRLqR9uY32w" org.eventb.core.assignment="winnerNotif ≔ winnerNotif ∪ {a ↦ u}" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-xyIvALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="CloseAuctionFail">
+        <org.eventb.core.refinesEvent name="_Y-xyI_ALEe2gRLqR9uY32w" org.eventb.core.target="CloseAuctionFail"/>
+        <org.eventb.core.guard name="_Y-xyJPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="a ∈ liveAuctions"/>
+        <org.eventb.core.guard name="_Y-xyJfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="a ∈ dom(endTime)"/>
+        <org.eventb.core.guard name="_Y-xyJvALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="endTime(a) ≤ time"/>
+        <org.eventb.core.action name="_Y-yZMPALEe2gRLqR9uY32w" org.eventb.core.assignment="liveAuctions ≔ liveAuctions ∖ {a}" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="_Y-yZMfALEe2gRLqR9uY32w" org.eventb.core.assignment="closedFailed ≔ closedFailed ∪ {a}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-yZMvALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="Bid">
+        <org.eventb.core.refinesEvent name="_Y-yZM_ALEe2gRLqR9uY32w" org.eventb.core.target="Bid"/>
+        <org.eventb.core.guard name="_Y-yZNPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd9" org.eventb.core.predicate="a ∈ liveAuctions"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-yZNfALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="getAuctionHistory">
+        <org.eventb.core.refinesEvent name="_Y-yZNvALEe2gRLqR9uY32w" org.eventb.core.target="getAuctionHistory"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-yZN_ALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="ViewStatusCreatedAuction">
+        <org.eventb.core.parameter name="_Y-yZOPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="a"/>
+        <org.eventb.core.parameter name="_Y-yZOfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="u"/>
+        <org.eventb.core.parameter name="_Y-zAQPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="result"/>
+        <org.eventb.core.guard name="_Y-zAQfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ loggedIn"/>
+        <org.eventb.core.guard name="_Y-zAQvALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="a ∈ createdAuctions"/>
+        <org.eventb.core.guard name="_Y-zAQ_ALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="seller(a) = u"/>
+        <org.eventb.core.guard name="_Y-zARPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="result = a"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-zARfALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="ViewStatusLiveAuction">
+        <org.eventb.core.parameter name="_Y-zARvALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="a"/>
+        <org.eventb.core.parameter name="_Y-zAR_ALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="u"/>
+        <org.eventb.core.parameter name="_Y-zASPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="result"/>
+        <org.eventb.core.guard name="_Y-zASfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ loggedIn"/>
+        <org.eventb.core.guard name="_Y-znUPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="a ∈ liveAuctions"/>
+        <org.eventb.core.guard name="_Y-znUfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="seller(a) = u"/>
+        <org.eventb.core.guard name="_Y-znUvALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="result = a"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-znU_ALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="ViewStatusCancelledAuction">
+        <org.eventb.core.parameter name="_Y-znVPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="a"/>
+        <org.eventb.core.parameter name="_Y-znVfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="u"/>
+        <org.eventb.core.parameter name="_Y-znVvALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="result"/>
+        <org.eventb.core.guard name="_Y-znV_ALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ loggedIn"/>
+        <org.eventb.core.guard name="_Y-znWPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="a ∈ cancelled"/>
+        <org.eventb.core.guard name="_Y-znWfALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="seller(a) = u"/>
+        <org.eventb.core.guard name="_Y-0OYPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="result = a"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-0OYfALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="ViewStatusClosedFailedAuction">
+        <org.eventb.core.parameter name="_Y-2DkPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="a"/>
+        <org.eventb.core.parameter name="_Y-2qoPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="u"/>
+        <org.eventb.core.parameter name="_Y-2qofALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="result"/>
+        <org.eventb.core.guard name="_Y-2qovALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ loggedIn"/>
+        <org.eventb.core.guard name="_Y-3RsPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="a ∈ closedFailed"/>
+        <org.eventb.core.guard name="_Y-34wPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="seller(a) = u"/>
+        <org.eventb.core.guard name="_Y-4f0PALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="result = a"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-4f0fALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="ViewStatusClosedSuccessAuction">
+        <org.eventb.core.parameter name="_Y-4f0vALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="a"/>
+        <org.eventb.core.parameter name="_Y-4f0_ALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="u"/>
+        <org.eventb.core.parameter name="_Y-4f1PALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="result"/>
+        <org.eventb.core.guard name="_Y-5G4PALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ loggedIn"/>
+        <org.eventb.core.guard name="_Y-5G4fALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="a ∈ closedSuccess"/>
+        <org.eventb.core.guard name="_Y-5G4vALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="seller(a) = u"/>
+        <org.eventb.core.guard name="_Y-5G4_ALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="result = a"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-5G5PALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="GiveFeedback">
+        <org.eventb.core.parameter name="_Y-5G5fALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="u"/>
+        <org.eventb.core.parameter name="_Y-5G5vALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="a"/>
+        <org.eventb.core.parameter name="_Y-5G5_ALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.identifier="f"/>
+        <org.eventb.core.guard name="_Y-5G6PALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ loggedIn"/>
+        <org.eventb.core.guard name="_Y-5G6fALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd2" org.eventb.core.predicate="a ∈ closedSuccess ∪ closedFailed ∪ cancelled"/>
+        <org.eventb.core.guard name="_Y-5t8PALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd3" org.eventb.core.predicate="seller(a) ≠ u"/>
+        <org.eventb.core.guard name="_Y-5t8fALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="u ∈ bidders[{a}]"/>
+        <org.eventb.core.guard name="_Y-5t8vALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="(endTime(a) + feedbackDuration) ≥ time"/>
+        <org.eventb.core.guard name="_Y-68EPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="endTime(a) &lt; time"/>
+        <org.eventb.core.guard name="_Y-7jIPALEe2gRLqR9uY32w" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="f ∉ ran(status)"/>
+        <org.eventb.core.action name="_Y-7jIfALEe2gRLqR9uY32w" org.eventb.core.assignment="status ≔ status ∪ {seller(a) ↦ f}" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-7jIvALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="LogIn">
+        <org.eventb.core.refinesEvent name="_Y-7jI_ALEe2gRLqR9uY32w" org.eventb.core.target="LogIn"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-7jJPALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="LogOut">
+        <org.eventb.core.refinesEvent name="_Y-7jJfALEe2gRLqR9uY32w" org.eventb.core.target="LogOut"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_Y-8KMPALEe2gRLqR9uY32w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="RegisterUser">
+        <org.eventb.core.refinesEvent name="_Y-8KMfALEe2gRLqR9uY32w" org.eventb.core.target="RegisterUser"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>

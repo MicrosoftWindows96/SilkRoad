@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="NAME" org.eventb.core.type="ℙ(NAME)"/>
+        <org.eventb.core.poIdentifier name="USER" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="PASSWORD" org.eventb.core.type="ℙ(PASSWORD)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="users" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="password" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="name" org.eventb.core.type="ℙ(USER×NAME)"/>
+        <org.eventb.core.poIdentifier name="loginID" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.poIdentifier name="loggedIn" org.eventb.core.type="ℙ(USER)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="INITIALISATION/inv-name/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPpasswore"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(USER×NAME))∈(∅ ⦂ ℙ(USER)) → NAME" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN0_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVG04fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN0_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poSequent#INITIALISATION\/inv-name\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv-password/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPpasswore"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(USER×PASSWORD))∈(∅ ⦂ ℙ(USER)) → PASSWORD" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN1PAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVG04fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN1PAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poSequent#INITIALISATION\/inv-password\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv-loginID/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPpasswore"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(USER×ℤ))∈(∅ ⦂ ℙ(USER)) ↣ ℕ" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN1fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVG04fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN1fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poSequent#INITIALISATION\/inv-loginID\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv-logged-in/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPpasswore"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(USER))⊆(∅ ⦂ ℙ(USER))" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVG04PAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVG04fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVG04PAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poSequent#INITIALISATION\/inv-logged-in\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTpasswore" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="name'" org.eventb.core.type="ℙ(USER×NAME)"/>
+        <org.eventb.core.poIdentifier name="loginID'" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.poIdentifier name="users'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="loggedIn'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="password'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPpasswore" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTIDENTpasswore" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poSequent name="RegisterUser/inv-name/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPpassworf"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="name{u ↦ n}∈users∪{u} → NAME" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN0_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN0_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poSequent#RegisterUser\/inv-name\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="RegisterUser/inv-password/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPpassworf"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="password{u ↦ p}∈users∪{u} → PASSWORD" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN1PAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN1PAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poSequent#RegisterUser\/inv-password\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="RegisterUser/inv-loginID/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPpassworf"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="loginID{u ↦ l}∈users∪{u} ↣ ℕ" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN1fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN1fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poSequent#RegisterUser\/inv-loginID\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="RegisterUser/inv-logged-in/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPpassworf"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="loggedIn⊆users∪{u}" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVG04PAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVG04PAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poSequent#RegisterUser\/inv-logged-in\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTpassworf" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="name'" org.eventb.core.type="ℙ(USER×NAME)"/>
+        <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="loginID'" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.poIdentifier name="users'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="n" org.eventb.core.type="NAME"/>
+        <org.eventb.core.poIdentifier name="password'" org.eventb.core.type="ℙ(USER×PASSWORD)"/>
+        <org.eventb.core.poIdentifier name="l" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="p" org.eventb.core.type="PASSWORD"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPpassworf" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTIDENTpassworf" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈USER" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVIqFPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="u∉users" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVKfQPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="n∈NAME" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVLtYPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p∈PASSWORD" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVLtYfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="l∈ℕ" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVLtYvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="l∉ran(loginID)" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVIDAPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVLtY_AKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="LogIn/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTHYPpassworg("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="u∈dom(password)∧password∈USER ⇸ PASSWORD" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVMUdPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVM7hPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVMUdPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVM7hPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTHYPpassworg("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="LogIn/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTHYPpassworg)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="u∈dom(loginID)∧loginID∈USER ⇸ ℤ" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVMUdPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVM7hfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVMUdPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVM7hfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTHYPpassworg)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="LogIn/inv-logged-in/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPpassworg"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="loggedIn∪{u}⊆users" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVG04PAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVMUdPAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVG04PAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poSequent#LogIn\/inv-logged-in\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTpassworg" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="ID" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="loggedIn'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="p" org.eventb.core.type="PASSWORD"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPpassworg(" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTIDENTpassworg" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈users" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVMUdPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVM7gvAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="u∉loggedIn" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVMUdPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVM7g_AKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPpassworg)" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTHYPpassworg(" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="password(u)=p" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVMUdPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVM7hPAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPpassworg" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTHYPpassworg)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="loginID(u)=ID" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVMUdPAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVM7hfAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="LogOut/inv-logged-in/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTALLHYPpassworh"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="loggedIn ∖ {u}⊆users" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVG04PAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVNikfAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVG04PAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poSequent#LogOut\/inv-logged-in\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTpassworh" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="loggedIn'" org.eventb.core.type="ℙ(USER)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPpassworh" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#EVTIDENTpassworh" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈loggedIn" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.event#_EVNikfAKEe2gRLqR9uY32w|org.eventb.core.guard#_EVNik_AKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/SilkRoad/m0.bpo|org.eventb.core.poFile#m0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="users⊆USER" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN0vAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="name∈users → NAME" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN0_AKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="password∈users → PASSWORD" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN1PAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="loginID∈users ↣ ℕ" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVGN1fAKEe2gRLqR9uY32w"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="loggedIn⊆users" org.eventb.core.source="/SilkRoad/m0.bum|org.eventb.core.machineFile#m0|org.eventb.core.invariant#_EVG04PAKEe2gRLqR9uY32w"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

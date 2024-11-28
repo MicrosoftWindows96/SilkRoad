@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;ac.soton.xeventb.xcontext.base">
+    <org.eventb.core.scCarrierSet name="NAME" org.eventb.core.source="/SilkRoad/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.carrierSet#_EW8n8PAKEe2gRLqR9uY32w" org.eventb.core.type="ℙ(NAME)"/>
+    <org.eventb.core.scCarrierSet name="USER" org.eventb.core.source="/SilkRoad/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.carrierSet#_EW8A4PAKEe2gRLqR9uY32w" org.eventb.core.type="ℙ(USER)"/>
+    <org.eventb.core.scCarrierSet name="PASSWORD" org.eventb.core.source="/SilkRoad/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.carrierSet#_EW9PAPAKEe2gRLqR9uY32w" org.eventb.core.type="ℙ(PASSWORD)"/>
+</org.eventb.core.scContextFile>

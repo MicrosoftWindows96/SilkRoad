@@ -1,0 +1,10 @@
+context c1
+extends c0
+
+sets 
+	ITEM
+	AUCTION
+	BID
+	FEEDBACK
+	
+end
